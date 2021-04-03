@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_recyclebin_multidel"
+        android:title="@string/delete"
+        android:icon="@drawable/ic_delete_white_24dp"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/action_recyclebin_multirestore"
+        android:title="@string/delete"
+        android:icon="@drawable/ic_restore_white_24dp"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/action_recyclebin_selectall"
+        android:title="@string/select_all"
+        android:icon="@drawable/ic_delete_white_24dp"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:visible="false"
+        android:id="@+id/action_recyclebin_deselectall"
+        android:title="@string/deselect_all"
+        android:icon="@drawable/ic_delete_white_24dp"
+        app:showAsAction="never"
+        />
+</menu>

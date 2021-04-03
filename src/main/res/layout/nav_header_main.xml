@@ -1,0 +1,1019 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/diagonal_layout_blue_half_rect"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_navheader_profile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="-22dp"
+            android:contentDescription="@string/nav_header_desc"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            android:src="@drawable/ic_avatar"
+            app:civ_border_color="@color/colorPrimaryDark"
+            app:civ_border_width="1dp"
+            app:civ_circle_background_color="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/tv_navheader_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            tools:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+        <TextView
+            tools:text="@string/app_name"
+            android:id="@+id/tv_navheader_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/colorPrimary" />
+
+        <com.google.android.material.button.MaterialButton
+            app:cornerRadius="20dp"
+            android:id="@+id/btn_navheader_dashboard_edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="10dp"
+            android:text="@string/edit_profile"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/tv_nav_bar_dashboard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.85"
+                        android:drawableLeft="@drawable/ic_home_darkblue_24dp"
+                        android:drawablePadding="25dp"
+                        android:padding="14dp"
+                        android:text="@string/dashboard"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:visibility="visible"
+                android:id="@+id/ll_header_main"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.85"
+                                android:drawableLeft="@drawable/ic_person_darkblue_24dp"
+                                android:drawablePadding="25dp"
+                                android:padding="14dp"
+                                android:text="@string/user_management"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/iv_nav_drawer_user_management_arrow"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="0.14"
+                                android:contentDescription="TODO"
+                                android:scaleType="center"
+                                app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                tools:ignore="VectorDrawableCompat" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_nav_bar_user_management_level_0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:animateLayoutChanges="true"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.85"
+                                    android:drawableLeft="@drawable/ic_lock_dark_blue_24dp"
+                                    android:drawablePadding="25dp"
+                                    android:padding="14dp"
+                                    android:text="@string/authorization"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/iv_nav_drawer_authorization_arrow"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_weight="0.14"
+                                    android:contentDescription="TODO"
+                                    android:scaleType="center"
+                                    app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_nav_bar_Authorization_level_0"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/tv_nav_bar__Authorization_user_profile"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginRight="14dp"
+                                    android:drawableLeft="@drawable/ic_person_outline_grey_24dp"
+                                    android:drawablePadding="25dp"
+                                    android:padding="14dp"
+                                    android:text="@string/user_profile"
+                                    android:textColor="@color/dark_grey_2"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_nav_bar__group_manager_storage_policies"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginRight="14dp"
+                                    android:drawableLeft="@drawable/ic_storage_grey_24dp"
+                                    android:drawablePadding="25dp"
+                                    android:padding="14dp"
+                                    android:text="@string/storage_policies"
+                                    android:textColor="@color/dark_grey_2"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:animateLayoutChanges="true"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.85"
+                                    android:drawableLeft="@drawable/ic_person_outline_dark_blue_24dp"
+                                    android:drawablePadding="25dp"
+                                    android:padding="14dp"
+                                    android:text="@string/user_manager"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/iv_nav_drawer_user_manager_arrow"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_weight="0.14"
+                                    android:contentDescription="TODO"
+                                    android:scaleType="center"
+                                    app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_nav_bar_user_manager_level_0"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/tv_nav_bar_user_manager_add_user"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginRight="14dp"
+
+                                    android:drawableLeft="@drawable/ic_person_add_grey_24dp"
+                                    android:drawablePadding="25dp"
+                                    android:padding="14dp"
+                                    android:text="@string/add_user"
+                                    android:textColor="@color/dark_grey_2"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_nav_bar_user_manager_user_list"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginRight="14dp"
+                                    android:drawableLeft="@drawable/ic_group_grey_24dp"
+                                    android:drawablePadding="25dp"
+                                    android:padding="14dp"
+                                    android:text="@string/user_list"
+                                    android:textColor="@color/dark_grey_2"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_nav_bar_group_manager"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_group_grey_24dp"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/group_manager"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+
+                    android:id="@+id/ll_nav_bar_storage_management_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp">
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.85"
+                                android:drawableLeft="@drawable/ic_storage_darkblue_24dp"
+                                android:drawablePadding="25dp"
+                                android:padding="14dp"
+                                android:text="@string/storage_management"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/iv_nav_drawer_storage_management_arrow"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="0.14"
+                                android:contentDescription="TODO"
+                                android:scaleType="center"
+                                app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <LinearLayout
+
+                        android:id="@+id/ll_nav_bar_storage_management_level_0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/ll_nav_bar_storage_manager_main"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:animateLayoutChanges="true"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.85"
+                                    android:drawableLeft="@drawable/ic_storage_darkblue_24dp"
+                                    android:drawablePadding="25dp"
+                                    android:padding="14dp"
+                                    android:text="@string/storage_manager"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/iv_nav_drawer_storage_manager_arrow"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_weight="0.14"
+                                    android:contentDescription="TODO"
+                                    android:scaleType="center"
+                                    app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp"
+                                    tools:ignore="VectorDrawableCompat" />
+                            </LinearLayout>
+
+                            <LinearLayout
+
+                                android:id="@+id/ll_nav_bar_storage_management_level_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                android:orientation="vertical">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rv_nav_bar_storage_manager_storage_assigned"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginRight="14dp"
+                                    android:layout_height="wrap_content">
+
+
+                                </androidx.recyclerview.widget.RecyclerView>
+
+                                <TextView
+                                    android:visibility="gone"
+                                    android:id="@+id/tv_nav_bar_storage_manager_storage_assigned"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="14dp"
+                                    android:layout_marginRight="14dp"
+                                    android:drawableLeft="@drawable/ic_storage_grey_24dp"
+                                    android:drawablePadding="25dp"
+                                    android:padding="14dp"
+                                    android:text="-"
+                                    android:textColor="@color/dark_grey_2"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:id="@+id/tv_nav_bar_recyclebin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_delete_black_24dp"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/recycle_bin"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+
+                            android:id="@+id/tv_nav_bar_shared_files_withme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_share_grey_24dp"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/shared_with_me"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+
+                            android:id="@+id/tv_nav_bar_shared_files"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_share_grey_24dp"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/shared_files"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+
+                            android:id="@+id/tv_nav_bar_shared_folder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_share_grey_24dp"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/shared_folder"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <!--workflow-->
+
+                <LinearLayout
+
+                    android:id="@+id/ll_nav_bar_workflow_management_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1">
+
+                            <TextView
+
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.85"
+                                android:drawableLeft="@drawable/ic_donut_large_blue_24dp"
+                                android:drawablePadding="25dp"
+                                android:padding="14dp"
+                                android:text="@string/workflow_management"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/iv_nav_drawer_workflow_management_arrow"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="0.14"
+                                android:contentDescription="TODO"
+                                android:scaleType="center"
+                                app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+
+                        android:id="@+id/ll_nav_bar_workflow_management_level_0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+
+                            android:id="@+id/ll_nav_bar_intiate_workflow_main"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:animateLayoutChanges="true"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:weightSum="1">
+
+                                <TextView
+
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.85"
+                                    android:drawableLeft="@drawable/ic_donut_small_blue_24dp"
+                                    android:drawablePadding="25dp"
+                                    android:padding="14dp"
+                                    android:text="@string/intiate_workflow"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/iv_nav_drawer_intiate_workflow_arrow"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_weight="0.14"
+                                    android:contentDescription="TODO"
+                                    android:scaleType="center"
+                                    app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+
+                                android:id="@+id/ll_nav_bar_workflow_management_level_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <EditText
+                                    android:id="@+id/et_nav_bar_workflow_list_filter"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:background="@drawable/shape_rect_grey"
+                                    android:drawableLeft="@drawable/ic_search_grey_24dp"
+                                    android:drawablePadding="10dp"
+                                    android:hint="@string/search_workflow"
+                                    android:padding="10dp"
+                                    android:textSize="14dp"
+                                    android:visibility="visible" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rv_workflow_list_nav_bar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="visible">
+
+                                </androidx.recyclerview.widget.RecyclerView>
+
+                                <TextView
+                                    android:id="@+id/tv_wf_list_no_workflow_found"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="20dp"
+                                    android:text="@string/no_worflows_found"
+                                    android:textColor="#ff0400"
+                                    android:textStyle="bold"
+                                    android:visibility="gone" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:id="@+id/tv_nav_bar_intiate_file"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/intiate_file"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/intiate_file"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <TextView
+
+                            android:id="@+id/tv_nav_bar_task_track_status"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_linear_scale_grey_24dp"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/task_track_status"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+
+                            android:id="@+id/tv_nav_bar_in_tray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:drawableTint="@color/dark_grey_2"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_storage_darkblue_24dp"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/in_tray"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+
+                            android:id="@+id/tv_nav_bar_workflow_audit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_insert_chart_grey_24dp"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/workflow_audit"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:id="@+id/ll_Searchmodule_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.85"
+                                android:drawableLeft="@drawable/ic_search_darkblue_24dp"
+                                android:drawablePadding="25dp"
+                                android:padding="14dp"
+                                android:text="@string/search"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/iv_nav_drawer_search_arrow"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="0.14"
+                                android:contentDescription="TODO"
+                                android:scaleType="center"
+                                app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <LinearLayout
+
+                        android:id="@+id/ll_nav_bar_search_level_0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+
+                            android:id="@+id/tv_nav_bar_quick_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_search_grey_24dp"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/quick_search"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+
+                            android:id="@+id/tv_nav_bar_meta_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_search_grey_24dp"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/metadata_search"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+
+                            android:id="@+id/tv_nav_bar_freq_queries"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_search_grey_24dp"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/frequently_queries"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:id="@+id/ll_Audit_trail_panel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.85"
+                                android:drawableLeft="@drawable/ic_insert_chart_darkblue_24dp"
+                                android:drawablePadding="25dp"
+                                android:padding="14dp"
+                                android:text="@string/audit_trail"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/iv_nav_drawer_audit_trail_arrow"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="0.14"
+                                android:contentDescription="TODO"
+                                android:scaleType="center"
+                                app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+
+                        android:id="@+id/ll_nav_bar_Audit_trail_level_0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+
+                            android:id="@+id/tv_nav_bar_user_audit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_person_grey_24dp"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/user_audit"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_nav_bar_storage_audit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_storage_grey_24dp"
+                            android:drawablePadding="25dp"
+                            android:padding="14dp"
+                            android:text="@string/storage_audit"
+                            android:textColor="@color/dark_grey_2"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_nav_bar_visitor_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:drawableLeft="@drawable/ic_person_darkblue_24dp"
+                    android:drawablePadding="25dp"
+                    android:padding="14dp"
+                    android:text="@string/visitor_pass"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+
+
+
+
+            <!--       <View
+                       android:layout_margin="10dp"
+                       android:layout_gravity="center"
+                       android:background="@color/dark_grey_2"
+                       android:layout_width="330dp"
+                       android:layout_height="1dp"/>-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="25dp"
+                android:padding="14dp"
+                android:text="@string/others"
+                android:textColor="@color/black_blur"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+
+                android:id="@+id/tv_nav_bar_support"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_help_outline_darkblue_24dp"
+                android:drawablePadding="25dp"
+                android:padding="14dp"
+                android:text="@string/support"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+
+                android:id="@+id/tv_nav_bar_logoout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_power_settings_new_darkblue_24dp"
+                android:drawablePadding="25dp"
+                android:padding="14dp"
+                android:text="@string/logout"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+
+                android:id="@+id/tv_nav_bar_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_error_outline_blue_24dp"
+                android:drawablePadding="25dp"
+                android:padding="14dp"
+                android:text="@string/about"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

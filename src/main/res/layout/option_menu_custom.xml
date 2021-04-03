@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+
+        app:cardCornerRadius="8dp"
+        android:layout_margin="5dp"
+        app:cardUseCompatPadding="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_view_file_popup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_pageview_black_24dp"
+                android:drawablePadding="10dp"
+                android:padding="5dp"
+                android:text="View File"
+                android:textStyle="bold" />
+            <TextView
+                android:padding="5dp"
+                android:drawablePadding="10dp"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_remove_red_eye_blue_24dp"
+                android:text="View Metadata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:padding="5dp"
+                android:drawablePadding="10dp"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_delete_black_24dp"
+                android:text="Delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:visibility="gone"
+                android:padding="5dp"
+                android:drawablePadding="10dp"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_add_blue_24dp"
+                android:text="Workflow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>

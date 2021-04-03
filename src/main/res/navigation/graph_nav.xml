@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_nav"
+    app:startDestination="@id/describesFragment">
+
+    <fragment
+        android:id="@+id/describesFragment"
+        android:name="in.cbslgroup.ezeepeafinal.ui.fragments.upload.DescribesFragment"
+        android:label="DescribesFragment" >
+        <action
+            android:id="@+id/action_describesFragment_to_uploadFileFragment"
+            app:destination="@id/uploadFileFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/uploadFileFragment"
+        android:name="in.cbslgroup.ezeepeafinal.ui.fragments.upload.UploadFileFragment"
+        android:label="fragment_upload_file"
+        tools:layout="@layout/fragment_upload_file" >
+        <action
+            android:id="@+id/action_uploadFileFragment_to_verifyAndCompleteFragment"
+            app:destination="@id/verifyAndCompleteFragment" />
+        <action
+            android:id="@+id/action_uploadFileFragment_to_describesFragment"
+            app:destination="@id/describesFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/verifyAndCompleteFragment"
+        android:name="in.cbslgroup.ezeepeafinal.ui.fragments.upload.VerifyAndCompleteFragment"
+        android:label="fragment_verify_and_complete"
+        tools:layout="@layout/fragment_verify_and_complete" >
+        <action
+            android:id="@+id/action_verifyAndCompleteFragment_to_uploadInWorkflowFragment"
+            app:destination="@id/uploadInWorkflowFragment" />
+        <action
+            android:id="@+id/action_verifyAndCompleteFragment_to_uploadFileFragment"
+            app:destination="@id/uploadFileFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/uploadInWorkflowFragment"
+        android:name="in.cbslgroup.ezeepeafinal.ui.fragments.upload.UploadInWorkflowFragment"
+        android:label="fragment_upload_in_workflow"
+        tools:layout="@layout/fragment_upload_in_workflow" >
+
+        <action
+            android:id="@+id/action_uploadInWorkflowFragment_to_verifyAndCompleteFragment"
+            app:destination="@id/verifyAndCompleteFragment" />
+
+    </fragment>
+
+
+
+</navigation>

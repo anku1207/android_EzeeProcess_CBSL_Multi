@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    android:fillViewport="true"
+    android:id="@+id/scrollview_dashboard"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:background="@drawable/diagonal_layout_blue_half_rect_big"
+            android:id="@+id/ll_mainactivity_dashboard"
+            android:visibility="visible"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                app:cardElevation="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="5dp"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold"
+                        android:text="Dashboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_marginTop="3dp"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:text="Welcome to Dashboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <!--     <android.support.v7.widget.CardView
+
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent"
+                             android:layout_margin="5dp"
+                             android:layout_weight="1"
+                             android:elevation="40dp">
+
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 android:layout_margin="5dp"
+                                 android:orientation="vertical">
+
+                                 <ImageView
+                                     android:id="@+id/dashboard_mydms"
+                                     android:layout_width="100dp"
+                                     android:layout_height="80dp"
+                                     android:layout_gravity="center_horizontal"
+                                     android:padding="5dp"
+                                     android:scaleType="centerCrop"
+                                     android:src="@drawable/ezeedmsicon" />
+
+                                 <TextView
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:layout_gravity="center_horizontal"
+                                     android:layout_margin="5dp"
+                                     android:text="My DMS"
+                                     android:textSize="12dp"
+                                     android:textStyle="bold" />
+
+                                 <View
+
+                                     android:layout_width="100dp"
+                                     android:layout_height="1dp"
+                                     android:layout_gravity="center_horizontal"
+                                     android:background="#808080" />
+
+                                 <TextView
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:layout_gravity="center_horizontal"
+                                     android:layout_marginBottom="10dp"
+                                     android:layout_marginTop="5dp"
+                                     android:text="Explore the dms"
+                                     android:textSize="10dp" />
+
+
+                             </LinearLayout>
+
+                         </android.support.v7.widget.CardView>-->
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <!--dms-->
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_dashboard_mydms"
+                            android:background="@color/tranparent_blue"
+                            android:layout_width="0dp"
+                            android:layout_height="200dp"
+                            android:layout_margin="5dp"
+                            
+                            android:layout_weight="1"
+                            app:cardCornerRadius="8dp"
+                            android:layout_marginStart="25dp">
+
+                            <LinearLayout
+                                android:background="@color/tranparent_blue"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/iv_dashboard_dms"
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:contentDescription="TODO"
+                                    android:padding="5dp"
+                                    android:scaleType="centerCrop" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_margin="5dp"
+                                    android:text="DMS"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+
+                                <View
+
+                                    android:layout_width="100dp"
+                                    android:layout_height="1dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="#808080" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Explore the dms"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="10dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_dashboard_inTray"
+                            android:visibility="visible"
+                            android:layout_width="0dp"
+                            android:layout_height="200dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            app:cardCornerRadius="8dp">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/iv_dashboard_intray"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:padding="5dp"
+                                    android:scaleType="centerCrop"
+                                    android:contentDescription="TODO" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_margin="5dp"
+                                    android:text="In Tray"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+
+                                <View
+
+                                    android:layout_width="100dp"
+                                    android:layout_height="1dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="#808080" />
+
+                                <TextView
+                                    android:id="@+id/tv_dashboard_inTrayNooftask"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:text="0"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="10dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <!--nooffolder-->
+
+                        <androidx.cardview.widget.CardView
+                            app:cardElevation="0dp"
+                            android:id="@+id/cv_dashboard_nooffolders"
+                            android:visibility="visible"
+                            android:layout_width="0dp"
+                            android:layout_height="200dp"
+                            android:layout_weight="0.33"
+                            >
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/iv_dashboard_nooffolders"
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:contentDescription="TODO"
+                                    android:padding="5dp"
+                                    android:scaleType="centerCrop" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_margin="5dp"
+                                    android:text="No. of folders"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+
+                                <View
+
+                                    android:layout_width="100dp"
+                                    android:layout_height="1dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="#808080" />
+
+                                <TextView
+                                    android:id="@+id/tv_dashboard_NoOfFolders"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:text="0"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="10dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+
+                            android:id="@+id/cv_dashboard_nooffile"
+                            app:cardElevation="0dp"
+                            android:layout_width="0dp"
+                            android:layout_height="200dp"
+                            android:layout_weight="0.33"
+                            >
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/iv_dashboard_nooffiles"
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:contentDescription="TODO"
+                                    android:padding="5dp"
+                                    android:scaleType="centerCrop" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_margin="5dp"
+                                    android:text="No. of file"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+
+                                <View
+
+                                    android:layout_width="100dp"
+                                    android:layout_height="1dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="#808080" />
+
+                                <TextView
+                                    android:id="@+id/tv_dashboard_NoOfFiles"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:text="0"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="10dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            app:cardElevation="0dp"
+                            android:id="@+id/cv_dashboard_memoryused"
+                            android:layout_width="0dp"
+                            android:layout_height="200dp"
+                            android:layout_weight="0.33"
+                            >
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/iv_dashboard_dms_memory_used"
+                                    android:layout_width="100dp"
+                                    android:layout_height="80dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:contentDescription="TODO"
+                                    android:padding="5dp"
+                                    android:scaleType="centerCrop" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_margin="5dp"
+                                    android:text="Memory Used"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="100dp"
+                                    android:layout_height="1dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="#808080" />
+
+                                <TextView
+                                    android:id="@+id/tv_dashboard_MemoryUsed"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:text="0 MB"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="10dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_dashboard_edit_profile"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="?attr/selectableItemBackground"
+                        android:contentDescription="TODO"
+                        android:padding="5dp"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="5dp"
+                        android:text="Edit Profile"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                    <View
+
+                        android:layout_width="100dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#808080" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Update your profile"
+                        android:textSize="10dp" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressBar_mainactivity"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDrawable="@drawable/progressbar_rotate"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+
+
+
+    </LinearLayout>
+
+    <!--   android:src="@drawable/ic_layers"
+       android:src="@drawable/ic_intray"
+       android:src="@drawable/ic_no_of_folders"
+       android:src="@drawable/ic_no_of_files"
+       android:src="@drawable/ic_pen_blue"
+       android:src="@drawable/ic_memory"-->
+
+</ScrollView>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:weightSum="1"
+    android:baselineAligned="false" android:padding="5dp"
+    android:background="@color/red"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+         android:gravity="center"
+        android:layout_weight="0.20"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_margin="5dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_signal_wifi_off_white_24dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_weight="0.80"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="@string/no_internet_connection_found"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="2dp"
+            android:textColor="@color/white"
+            android:text="@string/check_your_internet_connection_and_try_again_later"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

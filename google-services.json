@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1097827348528",
+    "firebase_url": "https://ezeeprocess-28e0a.firebaseio.com",
+    "project_id": "ezeeprocess-28e0a",
+    "storage_bucket": "ezeeprocess-28e0a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097827348528:android:e17ed84f74774c64",
+        "android_client_info": {
+          "package_name": "in.cbslgroup.ezeepeafinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097827348528-la0v988562mpaifp8j2mb9nf20v6n96h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0OTKU1Uw2M5XnQBS0KGaB232GkOwjCcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097827348528-la0v988562mpaifp8j2mb9nf20v6n96h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

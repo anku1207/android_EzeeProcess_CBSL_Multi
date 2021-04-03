@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@drawable/ic_baseline_language_24"
+        android:id="@+id/action_main_choose_language"
+        android:orderInCategory="100"
+        android:visible="true"
+        android:title="Choose Language"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always" />
+
+<!--    <item-->
+<!--        android:icon="@drawable/ic_search_white_24dp"-->
+<!--        android:id="@+id/action_main_quick_search"-->
+<!--        android:orderInCategory="100"-->
+<!--        android:visible="false"-->
+<!--        android:title="Quick Search"-->
+<!--        app:actionViewClass="androidx.appcompat.widget.SearchView"-->
+<!--        app:showAsAction="always" />-->
+
+
+</menu>

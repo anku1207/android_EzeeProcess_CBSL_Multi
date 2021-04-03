@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipelayout_main_acitivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode ="true"
+    android:gravity="center"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.activity.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:background="@drawable/rect_curved_corners"
+        android:id="@+id/scrollview_main_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:visibility="visible">
+
+
+      <LinearLayout
+          android:layout_marginTop="-10dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_dash_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="20dp"
+            android:text="@string/dashboard"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="7dp"
+            app:cardUseCompatPadding="true">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+
+            <SearchView
+                android:id="@+id/sv_quick_search_in_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_rect_7_white"
+                android:iconifiedByDefault="false"
+                android:maxLines="1"
+                android:focusable="true"
+                android:queryHint="Quick Search : Files , Documents ..."
+
+                >
+
+            </SearchView>
+
+
+
+          </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:weightSum="4">
+
+
+          <HorizontalScrollView
+              android:id="@+id/hori_scroll_view_dashboard"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="3.94"
+              android:scrollbarDefaultDelayBeforeFade="1000"
+              android:scrollbarFadeDuration="2000"
+              android:scrollbarSize="3dp"
+              android:scrollbars="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+              <androidx.cardview.widget.CardView
+                  android:id="@+id/cv_dms_report_graph"
+                  android:layout_marginLeft="10dp"
+                  android:layout_width="370dp"
+                  android:layout_height="wrap_content"
+                  android:visibility="visible"
+                  app:cardCornerRadius="8dp"
+                  app:cardElevation="5dp"
+                  app:cardUseCompatPadding="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/colorPrimary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:gravity="center"
+                      android:padding="5dp"
+                      android:text="@string/dms_report"
+                      android:textStyle="bold" />
+
+                  <LinearLayout
+                      android:gravity="center"
+                      android:layout_width="match_parent"
+                      android:layout_height="350dp">
+
+                    <ProgressBar
+                        android:id="@+id/pb_dms_report_chart"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent" />
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:visibility="gone"
+                        android:id="@+id/dms_report_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        android:layout_margin="10dp" />
+
+                  </LinearLayout>
+
+                </LinearLayout>
+
+
+              </androidx.cardview.widget.CardView>
+
+              <androidx.cardview.widget.CardView
+                  android:id="@+id/cv_workflow_status_graph"
+                  android:layout_width="370dp"
+                  android:layout_height="wrap_content"
+                  android:visibility="visible"
+                  app:cardCornerRadius="8dp"
+                  app:cardElevation="5dp"
+                  app:cardUseCompatPadding="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/colorPrimary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:gravity="center"
+                      android:padding="5dp"
+                      android:text="@string/workflow_status"
+                      android:textStyle="bold" />
+
+                  <LinearLayout
+                      android:gravity="center"
+                      android:orientation="vertical"
+                      android:layout_width="match_parent"
+                      android:layout_height="350dp">
+
+
+                    <ProgressBar
+                        android:id="@+id/pb_workflow_status_chart"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent" />
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:visibility="gone"
+                        android:id="@+id/workflow_status_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        android:layout_margin="10dp" />
+
+
+                  </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+              </androidx.cardview.widget.CardView>
+
+              <androidx.cardview.widget.CardView
+                  android:id="@+id/cv_workflow_priority_graph"
+                  android:layout_width="370dp"
+                  android:layout_height="wrap_content"
+                  android:visibility="visible"
+                  app:cardCornerRadius="8dp"
+                  app:cardElevation="5dp"
+                  app:cardUseCompatPadding="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/colorPrimary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:gravity="center"
+                      android:padding="5dp"
+                      android:text="@string/workflow_priority"
+                      android:textStyle="bold" />
+
+
+                  <LinearLayout
+                      android:gravity="center"
+                      android:orientation="vertical"
+                      android:layout_width="match_parent"
+                      android:layout_height="350dp">
+
+                    <ProgressBar
+                        android:id="@+id/pb_workflow_priority_chart"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent" />
+
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:visibility="gone"
+                        android:id="@+id/workflow_priority_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        android:layout_margin="10dp" />
+
+
+                  </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+              </androidx.cardview.widget.CardView>
+
+              <androidx.cardview.widget.CardView
+                  android:id="@+id/cv_memory_usage_chart"
+                  android:layout_width="370dp"
+                  android:layout_height="wrap_content"
+                  android:visibility="visible"
+                  app:cardCornerRadius="8dp"
+                  app:cardElevation="5dp"
+                  app:cardUseCompatPadding="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/colorPrimary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                  <TextView
+                      android:id="@+id/tv_heading_memory_status_chart"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:gravity="center"
+                      android:padding="5dp"
+                      android:text="@string/memory_usage_in_mb"
+                      android:textStyle="bold" />
+
+                  <LinearLayout
+                      android:gravity="center"
+                      android:orientation="vertical"
+                      android:layout_width="match_parent"
+                      android:layout_height="350dp">
+
+                    <ProgressBar
+                        android:id="@+id/pb_memory_status_chart"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent" />
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:visibility="gone"
+                        android:id="@+id/memory_status_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        android:layout_margin="10dp" />
+
+                  </LinearLayout>
+
+
+
+
+
+
+
+                </LinearLayout>
+
+
+              </androidx.cardview.widget.CardView>
+
+
+              <androidx.cardview.widget.CardView
+                  android:id="@+id/cv_user_report_chart"
+                  android:layout_width="370dp"
+                  android:layout_height="wrap_content"
+                  android:visibility="visible"
+                  app:cardCornerRadius="8dp"
+                  app:cardElevation="5dp"
+                  app:cardUseCompatPadding="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/colorPrimary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                  <TextView
+
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:gravity="center"
+                      android:padding="5dp"
+                      android:text="@string/user_report"
+                      android:textStyle="bold" />
+
+
+                  <LinearLayout
+                      android:orientation="vertical"
+                      android:gravity="center"
+                      android:layout_width="match_parent"
+                      android:layout_height="350dp">
+
+                    <ProgressBar
+                        android:id="@+id/pb_user_report_chart"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent" />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:visibility="gone"
+                        android:id="@+id/user_report_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        android:layout_margin="10dp" />
+
+
+                  </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+              </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+
+          </HorizontalScrollView>
+
+          <View
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="0.3" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+      </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar_mainactivity"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/progressbar_rotate"
+        android:visibility="visible" />
+
+
+  </LinearLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

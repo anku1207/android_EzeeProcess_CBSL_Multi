@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.usermanagement.ModifyGroupActivity"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_modifyGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:navigationIcon="@drawable/ic_cross_blue_dark"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:title="Update Group"
+                app:subtitle="Software"
+                app:subtitleTextColor="@color/colorPrimary"
+                app:titleTextColor="@color/colorPrimary">
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:visibility="visible"
+        android:id="@+id/ll_root_modify_group"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <androidx.core.widget.NestedScrollView
+                android:layout_weight="0.90"
+                android:fillViewport="true"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="7dp"
+                            android:padding="5dp"
+                            android:text="Group Name"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:hint="Enter group name"
+                            android:id="@+id/et_modifygroupactivity_group_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="7dp"
+                            android:background="@drawable/shape_rect_3"
+                            android:padding="7dp"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tv_modifygroupactivity_users_in_grp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="7dp"
+                            android:padding="5dp"
+                            android:text="Users in group : Software"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+
+
+<!--                          <com.example.ankitroy.ezeefile.Chip.UsernameCompletionView-->
+<!--                              android:id="@+id/autocomplete_textview_modifygroupactivity"-->
+<!--                              android:background="@drawable/shape_rect_3"-->
+<!--                              android:layout_width="match_parent"-->
+<!--                              android:dropDownSelector="@color/grey"-->
+<!--                              android:layout_height="wrap_content"-->
+<!--                              android:focusableInTouchMode="true"-->
+<!--                              android:imeOptions="actionDone"-->
+<!--                              android:hint="Add users"-->
+<!--                              android:inputType="text|textNoSuggestions|textMultiLine"-->
+<!--                              android:nextFocusDown="@+id/editText"-->
+<!--                              android:textColor="@color/colorPrimaryDark"-->
+<!--                              android:padding="7dp"-->
+<!--                              android:maxLines="9"-->
+<!--                              android:dropDownHeight="150dp"-->
+<!--                              android:layout_margin="7dp"-->
+<!--                              android:textSize="14sp" />-->
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="3dp"
+            android:gravity="right"
+            android:padding="7dp"
+            android:layout_weight="0.10"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <Button
+                android:id="@+id/btn_modifygroupactivity_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/light_red"
+                android:text="close"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_modifygroupactivity_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="save"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:id="@+id/progressBarModifyGroup"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+

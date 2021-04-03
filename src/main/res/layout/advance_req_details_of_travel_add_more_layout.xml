@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="20dp"
+    android:background="@drawable/rect_bg_with_outine"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_details_of_travel_add"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="right"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_add_blue_24dp" />
+
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/iv_details_of_travel_minus"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="right"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_minus_blue_24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false" android:orientation="horizontal"
+        android:padding="10dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_details_of_travel_sno"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.5"
+            android:hint="@string/s_no">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tie_details_of_travel_sno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="1"
+                tools:textSize="13sp">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_details_of_travel_date_of_travel"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.5"
+            android:hint="@string/date_of_travel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tie_details_of_travel_date_of_travel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="24-dec-2019"
+                android:focusable="false"
+                android:clickable="false"
+                android:inputType="none"
+                tools:textSize="13sp">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_details_of_travel_mode"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0.5"
+        android:hint="@string/air_train_bus_taxi">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_details_of_travel_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_arrow_drop_down_darkgrey_24dp"
+            tools:text="@string/select_mode"
+            android:focusable="false"
+            android:clickable="false"
+            android:inputType="none"
+            tools:textSize="13sp">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false" android:orientation="horizontal"
+        android:padding="10dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:id="@+id/til_details_of_travel_dest_from"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.5"
+            android:hint="@string/dest_from">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:id="@+id/tie_details_of_travel_dest_from"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_place_black_24dp"
+                tools:text="Delhi"
+                android:focusable="false"
+                android:editable="false"
+                android:inputType="none"
+                tools:textSize="13sp">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_details_of_travel_dest_to"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.5"
+            android:hint="@string/dest_to">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tie_details_of_travel_dest_to"
+                android:drawableRight="@drawable/ic_place_black_24dp"
+                tools:text="Delhi"
+                android:focusable="false"
+                android:editable="false"
+                android:inputType="none"
+                tools:textSize="13sp">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_details_of_travel_class"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0.5"
+        android:hint="@string/m_class">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:enabled="false"
+            android:id="@+id/tie_details_of_travel_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Select Class"
+            android:focusable="false"
+            android:drawableRight="@drawable/ic_arrow_drop_down_darkgrey_24dp"
+            android:clickable="false"
+            android:inputType="none"
+            tools:textSize="13sp">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:id="@+id/til_details_of_travel_remarks"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0.5"
+        android:hint="@string/remarks">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/tie_details_of_travel_remarks"
+            android:layout_height="wrap_content"
+            android:inputType="textFilter"
+            android:digits="@string/charset"
+            android:drawableRight="@drawable/ic_create_blue_24dp"
+            tools:textSize="13sp">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/til_details_of_travel_adv_req"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="0.5"
+        android:hint="@string/advance_required">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:id="@+id/tie_details_of_travel_adv_req"
+            tools:text="0"
+            tools:textSize="13sp">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:visibility="gone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/til_details_of_travel_sanc_req"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="0.5"
+        android:hint="@string/sanctioned_amount">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:id="@+id/tie_details_of_travel_sanc_req"
+            tools:text="0"
+            tools:textSize="13sp">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</LinearLayout>

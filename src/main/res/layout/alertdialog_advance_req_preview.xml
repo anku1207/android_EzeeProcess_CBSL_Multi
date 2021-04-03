@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/preview"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/ns_adv_req_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/ll_adv_req_preview_buttons"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/grey"
+                                android:gravity="center"
+                                android:padding="15dp"
+                                android:text="@string/details_advance_requestion_form"
+                                android:textColor="@color/black"
+                                >
+
+                            </TextView>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:baselineAligned="false" android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:hint="@string/date"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_date"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/transparent"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                        android:padding="10dp"
+                                        android:text="21-02-2020 10:28:48"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:hint="@string/name_of_the_person_traveling"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_name_of_the_person_traveling"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/transparent"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                        android:padding="10dp"
+                                        android:text="Ankit"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:baselineAligned="false" android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:hint="@string/grade"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_grade"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/transparent"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                        android:padding="10dp"
+                                        android:text="M7"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:hint="@string/date_of_travel"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_date_of_travel"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/transparent"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                        android:padding="10dp"
+                                        android:text="28-01-1997"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:baselineAligned="false" android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:hint="@string/name_of_the_client_events_project"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_name_of_the_client_event"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/transparent"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                        android:padding="10dp"
+                                        android:text="Ankit"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:hint="@string/designation"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_desig"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/transparent"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                        android:padding="10dp"
+                                        android:text="28-01-1997"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:baselineAligned="false" android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:hint="@string/expected_date_of_return"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_exp_date_of_return"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/transparent"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                        android:padding="10dp"
+                                        android:text="Ankit"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:hint="Employee ID"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_emp_id"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/transparent"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                        android:padding="10dp"
+                                        android:text="28-01-1997"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:hint="@string/no_of_days"
+                                android:padding="10dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_adv_req_preview_no_of_days"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/transparent"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:padding="10dp"
+                                    android:text="1"
+                                     />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-10dp"
+                                android:background="@color/grey"
+                                android:gravity="center"
+                                android:padding="15dp"
+                                android:text="@string/bank_details"
+                                android:textColor="@color/black" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_adv_req_preview_card_bank_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:baselineAligned="false" android:orientation="horizontal"
+                                android:visibility="gone"
+                                android:weightSum="1">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:hint="@string/bank_name"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_card_bank_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/transparent"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                        android:padding="10dp"
+                                        android:text="Axis"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:hint="@string/card_no"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_card_no"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/transparent"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                        android:padding="10dp"
+                                        android:text="123456"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_adv_req_preview_bank_bank_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:baselineAligned="false" android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.5"
+                                        android:hint="@string/bank_name"
+                                        android:padding="10dp">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/tie_adv_req_preview_bank_name"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@color/transparent"
+                                            android:editable="false"
+                                            android:focusable="false"
+                                            android:inputType="none"
+                                            android:padding="10dp"
+                                            android:text="Axis"
+                                             />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.5"
+                                        android:hint="@string/branch_name"
+                                        android:padding="10dp">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+
+                                            android:id="@+id/tie_adv_req_preview_branch_name"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@color/transparent"
+                                            android:editable="false"
+                                            android:focusable="false"
+                                            android:inputType="none"
+                                            android:padding="10dp"
+                                            android:text="123456"
+                                             />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:baselineAligned="false" android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.5"
+                                        android:hint="@string/ifsc_code"
+                                        android:padding="10dp">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/tie_adv_req_preview_ifsc"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@color/transparent"
+                                            android:editable="false"
+                                            android:focusable="false"
+                                            android:inputType="none"
+                                            android:padding="10dp"
+                                            android:text="Axis"
+                                             />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.5"
+                                        android:hint="@string/account_no"
+                                        android:padding="10dp">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/tie_adv_req_preview_acc_no"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@color/transparent"
+                                            android:editable="false"
+                                            android:focusable="false"
+                                            android:inputType="none"
+                                            android:padding="10dp"
+                                            android:text="123456"
+                                             />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-10dp"
+                                android:background="@color/grey"
+                                android:gravity="center"
+                                android:padding="15dp"
+                                android:text="@string/details_of_travel"
+                                android:textColor="@color/black"
+                               />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_details_of_travel_preview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-10dp"
+                                android:background="@color/grey"
+                                android:gravity="center"
+                                android:padding="15dp"
+                                android:text="@string/calculation_of_estimated_cost"
+                                android:textColor="@color/black"
+                                 />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:hint="@string/_1_to_and_for_fare"
+                                android:padding="10dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_adv_req_preview_to_and_for_fare"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/transparent"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:padding="10dp"
+                                    android:text="2896789"
+                                     />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-25dp"
+                                android:layout_weight="0.5"
+                                android:hint="@string/_2_lodging_and_boarding_charge_as_per_entitlement"
+                                android:padding="10dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/transparent"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:textSize="12sp"
+                                    android:inputType="none"
+                                    android:padding="10dp"
+                                     />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-10dp">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:id="@+id/til_advance_lodging_charges"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.35"
+                                    android:hint="@string/lodging_charges"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_lodging_charges"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/md_white_1000"
+                                        android:padding="10dp"
+                                        android:text="0"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:id="@+id/til_adv_req_preview_lodging_charges_pay_day_for"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_weight="0.35"
+                                    android:hint="@string/no_of_days"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_lodging_charges_pay_day_for"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/md_white_1000"
+                                        android:padding="10dp"
+                                        android:text="0"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.05"
+                                    android:gravity="center"
+                                    android:text="=" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:id="@+id/til_adv_req_preview_lodging_charges_pay_day_for_total"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.30"
+                                    android:hint="@string/total"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_lodging_charges_pay_day_for_total"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/md_white_1000"
+                                        android:padding="10dp"
+                                        android:text="0"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-10dp">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.35"
+                                    android:hint="@string/fooding_charges"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_fooding_charges"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/md_white_1000"
+                                        android:padding="10dp"
+                                        android:text="0"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_weight="0.35"
+                                    android:hint="@string/no_of_days"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_fooding_charges_pay_day_for"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/md_white_1000"
+                                        android:padding="10dp"
+                                        android:text="0"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.05"
+                                    android:gravity="center"
+                                    android:text="=" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.30"
+                                    android:hint="@string/total"
+                                    android:padding="10dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_adv_req_preview_fooding_charges_total"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/md_white_1000"
+                                        android:padding="10dp"
+                                        android:text="0"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:inputType="none"
+                                         />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                            </LinearLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/_3_local_conveyance"
+                                android:padding="10dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_adv_req_preview_local_conveyance"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/transparent"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:padding="10dp"
+                                    android:text="0"
+                                     />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/_4_telephone_charge"
+                                android:padding="10dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_adv_req_preview_tel_charges"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/transparent"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:padding="10dp"
+                                    android:text="0"
+                                     />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/_4_other_expenses_specify_if_any"
+                                android:padding="10dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_adv_req_preview_other_expenses"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/transparent"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:padding="10dp"
+                                    android:text="0"
+                                     />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/remarks"
+                                android:padding="10dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_adv_req_preview_remarks"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/transparent"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:padding="10dp"
+                                    android:text="@string/no_remarks_found"
+                                     />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/total_advance_required"
+                                android:padding="10dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_adv_req_preview_total_adv_req"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/transparent"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:padding="10dp"
+                                    android:text="0"
+                                     />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+                <LinearLayout
+                    android:id="@+id/ll_adv_req_preview_buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary"
+                    android:padding="5dp"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/btn_adv_req_preview_cancel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.5"
+                        android:text="@string/cancel"
+                        android:textColor="@color/white"
+                        app:backgroundTint="@color/md_red_300" />
+
+                    <Button
+                        android:id="@+id/btn_adv_req_preview_sumbit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/white"
+                        android:layout_weight="0.5"
+                        android:text="@string/submit"
+                        app:backgroundTint="@color/md_green_500" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

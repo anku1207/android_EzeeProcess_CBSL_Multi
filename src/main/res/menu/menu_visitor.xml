@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_search_white_24dp"
+        android:id="@+id/action_main_visitor_search"
+        android:orderInCategory="100"
+        android:title="@string/visitor_search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always" />
+
+    <item
+        android:icon="@drawable/ic_settings_backup_restore_white_24dp"
+        android:id="@+id/action_main_visitor_reset"
+        android:orderInCategory="100"
+        android:title="@string/search_reset"
+        app:showAsAction="always" />
+
+</menu>

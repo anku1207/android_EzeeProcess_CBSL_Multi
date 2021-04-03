@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:background="@color/colorPrimary"
+            android:id="@+id/tv_bs_with_search_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:textSize="18sp"
+            android:textColor="@color/md_white_1000"
+            android:textStyle="bold"
+            tools:text="Heading" />
+
+        <EditText
+            android:id="@+id/et_bs_with_search_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_corner_background"
+            android:drawableLeft="@drawable/ic_search_blue_24dp"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:hint="Search"
+            android:padding="10dp"
+            android:textSize="13sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_bs_with_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

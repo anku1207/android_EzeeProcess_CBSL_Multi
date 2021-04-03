@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <item
+        android:visible="false"
+        android:id="@+id/action_dms_grid_switch"
+        android:title="Gridview"
+        android:icon="@mipmap/ic_grid"
+        app:showAsAction="always"
+        />
+    <item
+        android:visible="false"
+        android:id="@+id/action_dms_list_switch"
+        android:title="Listview"
+        android:icon="@mipmap/ic_list"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/action_dms_search"
+        android:title="@string/search_metadata"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="always"
+         />
+
+
+
+
+    <item
+        android:id="@+id/action_upload_documents"
+        android:title="@string/upload_documents"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_create_new_child"
+        android:title="@string/create_new_sub_folder"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_modify_storage"
+        android:title="@string/modify_storage"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_assign_metadata"
+        android:title="@string/assign_metadata"
+        app:showAsAction="never" />
+
+
+
+    <item
+        android:visible="false"
+        android:id="@+id/action_lock_folder"
+        android:title="@string/lock_folder"
+        app:showAsAction="never" />
+    <item
+        android:visible="false"
+        android:id="@+id/action_unlock_folder"
+        android:title="@string/unlock_folder"
+        app:showAsAction="never" />
+
+    <item
+        android:visible="false"
+        android:id="@+id/action_forgot_pwd"
+        android:title="@string/forgot_password"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_share_folder"
+        android:visible="true"
+        android:title="@string/share_folder"
+        app:showAsAction="never" />
+
+    <item
+        android:visible="false"
+        android:id="@+id/action_move_storage"
+        android:title="@string/move_copy_storage"
+        app:showAsAction="never" />
+    <item
+        android:visible="false"
+        android:title="@string/copy_storage"
+        app:showAsAction="never" />
+
+</menu>

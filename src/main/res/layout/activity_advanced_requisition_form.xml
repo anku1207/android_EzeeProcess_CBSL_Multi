@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.workflow.AdvancedRequisitionFormActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_advanace_req"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                app:navigationIcon="@drawable/ic_back"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:title="@string/intitiate_workflow"
+                app:titleTextColor="@color/white">
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@string/details_advance_requestion_form"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/ll_btns"
+                android:fillViewport="true"
+                android:visibility="visible">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+
+                        android:id="@+id/ll_advance_basic_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/grey"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.85"
+                            android:padding="15dp"
+                            android:text="@string/basic_info"
+                            android:textColor="@color/md_black_1000"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/iv_advance_basic_info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.15"
+                            android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+
+
+                    </LinearLayout>
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/el_basic_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:el_duration="500"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="@string/tour_id"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold" />
+
+
+                            <LinearLayout
+                                android:layout_marginTop="-5dp"
+                                android:gravity="center"
+                                android:weightSum="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/til_advance_tour_id"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/enter_previous_tour_id">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/tie_advance_tour_id"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="15sp" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <Button
+                                    android:enabled="false"
+                                    android:visibility="gone"
+                                    android:id="@+id/btn_advance_tour_id"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_weight="0.20"
+                                    android:text="@string/get"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </LinearLayout>
+
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:text="@string/company"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_advance_company"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:hint="@string/select_company">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_advance_company"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableRight="@drawable/ic_arrow_drop_down_darkgrey_24dp"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:textSize="15sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:text="@string/date"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_advance_date"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:hint="@string/select_date">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_advance_date"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableRight="@drawable/ic_date_range_black_24dp"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:enabled="false"
+                                    android:inputType="none"
+                                    android:textSize="15sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:text="@string/name_of_the_person_traveling"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_advance_name_of_the_person_traveling"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:hint="@string/enter_name_of_the_person_traveling">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_advance_name_of_the_person_traveling"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableRight="@drawable/ic_person_blue_20dp"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:textSize="15sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:text="@string/designation"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_advance_designation"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:hint="@string/enter_designation">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_advance_designation"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableRight="@drawable/ic_person_blue_20dp"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:textSize="15sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:text="@string/grade"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_advance_grade"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:hint="@string/enter_grade">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_advance_grade"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableRight="@drawable/ic_star_black_24dp"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:textSize="15sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:text="@string/employee_id"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_advance_emp_id"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:hint="@string/enter_employee_id">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_advance_emp_id"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableRight="@drawable/ic_star_black_24dp"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:textSize="15sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:text="@string/date_of_travel"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_advance_date_of_travel"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:hint="@string/enter_date_of_travel">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_advance_date_of_travel"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableRight="@drawable/ic_date_range_black_24dp"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:textSize="15sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:text="@string/expected_date_of_return"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_advance_date_of_return"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:hint="@string/enter_expected_date_of_return">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_advance_date_of_return"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableRight="@drawable/ic_date_range_black_24dp"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:textSize="15sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:text="@string/name_of_the_client_event_project"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_advance_name_of_client_event_project"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:hint="@string/enter_name_of_the_client_event_project">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_advance_name_of_client_event_project"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="textFilter"
+                                    android:digits="@string/charset"
+                                    android:textSize="15sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:text="@string/no_of_days"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_advance_no_of_days"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:hint="@string/enter_no_of_days">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tie_advance_no_of_days"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:enabled="false"
+                                    android:drawableRight="@drawable/ic_date_range_black_24dp"
+                                    android:inputType="number"
+                                    android:textSize="15sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/dark_grey"
+                        android:visibility="gone" />
+
+
+                    <!--Bank Details-->
+
+                    <LinearLayout
+                        android:id="@+id/ll_advance_bank_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/grey"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.85"
+                            android:padding="15dp"
+                            android:text="@string/bank_details"
+                            android:textColor="@color/md_black_1000"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/iv_advance_bank_details"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.15"
+                            android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+
+
+                    </LinearLayout>
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/el_advance_bank_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:el_duration="500"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="-10dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginBottom="-10dp"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp"
+                                    android:text="@string/select_details"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textStyle="bold" />
+
+                                <RadioGroup
+                                    android:id="@+id/rg_advance_bank_details"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/rb_advance_bank_card_details"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/card_details" />
+
+                                    <RadioButton
+                                        android:id="@+id/rb_advance_bank_bank_details"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/bank_details" />
+
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                            <!--Card Details option-->
+                            <net.cachapa.expandablelayout.ExpandableLayout
+                                android:id="@+id/el_advance_bank_card_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:el_duration="500"
+                                app:el_expanded="false"
+                                app:el_parallax="0.5">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="10dp"
+                                        android:text="@string/bank_name"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textStyle="bold" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/til_advance_card_details_bank_name"
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="-5dp"
+                                        android:hint="@string/enter_bank_name">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/tie_advance_card_details_bank_name"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:inputType="textFilter"
+                                            android:digits="@string/charset"
+                                            android:drawableRight="@drawable/ic_create_blue_24dp"
+                                            android:textSize="15sp" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="10dp"
+                                        android:text="@string/card_no"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textStyle="bold" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/til_advance_card_details_card_no"
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="-5dp"
+                                        app:counterMaxLength="16"
+                                        app:helperText="@string/card_value_should_sixteen_char_long"
+                                        android:hint="@string/enter_card_no">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/tie_advance_card_details_card_no"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:inputType="number"
+                                            android:maxLength="16"
+                                            android:drawableRight="@drawable/ic_create_blue_24dp"
+                                            android:textSize="15sp" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                                </LinearLayout>
+
+                            </net.cachapa.expandablelayout.ExpandableLayout>
+
+                            <!--Bank Details option-->
+                            <net.cachapa.expandablelayout.ExpandableLayout
+                                android:id="@+id/el_advance_bank_bank_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:el_duration="500"
+                                app:el_expanded="true"
+                                app:el_parallax="0.5">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="10dp"
+                                        android:text="@string/bank_name"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textStyle="bold" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/til_advance_bank_bank_details_bank_name"
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="-5dp"
+                                        android:hint="@string/enter_bank_name">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/tie_advance_bank_bank_details_bank_name"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:inputType="textFilter"
+                                            android:digits="@string/charset"
+                                            android:drawableRight="@drawable/ic_create_blue_24dp"
+                                            android:textSize="15sp" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="10dp"
+                                        android:text="@string/branch_name"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textStyle="bold" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/til_advance_bank_bank_details_branch_name"
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="-5dp"
+                                        android:hint="@string/enter_branch_name">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/tie_advance_bank_bank_details_branch_name"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:inputType="textFilter"
+                                            android:digits="@string/charset"
+                                            android:drawableRight="@drawable/ic_create_blue_24dp"
+                                            android:textSize="15sp" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="10dp"
+                                        android:text="@string/ifsc_code"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textStyle="bold" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/til_advance_bank_bank_details_ifsc_code"
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="-5dp"
+                                        android:hint="@string/enter_ifsc_code">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/tie_advance_bank_bank_details_ifsc_code"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:inputType="textFilter"
+                                            android:digits="@string/charset"
+                                            android:drawableRight="@drawable/ic_create_blue_24dp"
+                                            android:textSize="15sp" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:padding="10dp"
+                                        android:text="@string/account_no"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textStyle="bold" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/til_advance_bank_bank_details_acc_no"
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="-5dp"
+                                        android:hint="@string/enter_account_no">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/tie_advance_bank_bank_details_acc_no"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:inputType="number"
+                                            android:drawableRight="@drawable/ic_create_blue_24dp"
+                                            android:textSize="15sp" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+                                </LinearLayout>
+
+
+                            </net.cachapa.expandablelayout.ExpandableLayout>
+
+                        </LinearLayout>
+
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/dark_grey"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_advance_details_of_travel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/grey"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.85"
+                            android:padding="15dp"
+                            android:text="@string/details_of_travel"
+                            android:textColor="@color/md_black_1000"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/iv_advance_details_of_travel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.15"
+                            android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+
+
+                    </LinearLayout>
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/el_advance_details_of_travel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:el_duration="500"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5">
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_details_of_travel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false" />
+
+
+                        <!--                        <HorizontalScrollView-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content">-->
+
+                        <!--                            <LinearLayout-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="match_parent"-->
+                        <!--                              >-->
+
+                        <!--                                <include layout="@layout/advance_req_details_of_travel_add_more_layout"></include>-->
+
+                        <!--                                <include layout="@layout/advance_req_details_of_travel_add_more_layout"></include>-->
+
+
+                        <!--                            </LinearLayout>-->
+
+                        <!--                        </HorizontalScrollView>-->
+
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/dark_grey"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/cb_advance_check_company_house_available"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="@string/check_if_company_guest_house_available"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/grey"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="@string/calculation_of_estimated_cost"
+                        android:textColor="@color/md_black_1000"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="15dp"
+                        android:text="(1) To and Fro fare :"
+                        android:textColor="@color/md_black_1000"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_advance_to_and_fro_fare"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginRight="10dp"
+                        android:hint="@string/_1_to_and_for_fare">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tie_advance_to_and_fro_fare"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="0"
+                            android:textSize="13sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:text="@string/_2_lodging_and_boarding_charges_as_per_entitlement"
+                        android:textColor="@color/md_black_1000"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="-15dp"
+                        android:padding="15dp"
+                        android:text="@string/lodging_charges"
+                        android:textColor="@color/md_black_1000"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_advance_lodging_charges"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.35"
+                            android:hint="@string/lodging_charges">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tie_advance_lodging_charges"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:text="0"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_advance_lodging_charges_pay_day_for"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="0.35"
+                            android:hint="@string/per_day_for">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tie_advance_lodging_charges_pay_day_for"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:inputType="number"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.05"
+                            android:gravity="center"
+                            android:text="=" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_advance_lodging_charges_pay_day_for_total"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.30">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tie_advance_lodging_charges_pay_day_for_total"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:text="0"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="-15dp"
+                        android:padding="15dp"
+                        android:text="@string/food_charges"
+                        android:textColor="@color/md_black_1000"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_advance_food_charges"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.35"
+                            android:hint="@string/food_charges">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tie_advance_food_charges"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:text="0"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_advance_food_charges_pay_day_for"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="0.35"
+                            android:hint="@string/per_day_for">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tie_advance_food_charges_pay_day_for"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:text="0"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.05"
+                            android:gravity="center"
+                            android:text="=" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_advance_food_charges_pay_day_for_total"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.30">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tie_advance_food_charges_pay_day_for_total"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:text="0"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-15dp"
+                        android:padding="15dp"
+                        android:text="@string/_3_local_conveyance"
+                        android:textColor="@color/md_black_1000"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_advance_local_conyeance"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginRight="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tie_advance_local_conyeance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:text="0"
+                            android:textSize="13sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:text="@string/_4_telephone"
+                        android:textColor="@color/md_black_1000"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_advance_telephone"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginRight="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tie_advance_telephone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:text="0"
+                            android:textSize="13sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:text="@string/_5_other_expenses_specify_if_any"
+                        android:textColor="@color/md_black_1000"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_advance_other_expenses"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginRight="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tie_advance_other_expenses"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:text="0"
+                            android:textSize="13sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_advance_other_remarks"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:hint="@string/remarks">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tie_advance_other_remarks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textFilter"
+                            android:digits="@string/charset"
+                            android:textSize="13sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:text="@string/total_advance_required"
+                        android:textColor="@color/md_black_1000"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_advance_total_advance"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="20dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tie_advance_total_advance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:text="0"
+                            android:textSize="13sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/ll_btns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorPrimaryDark"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/btn_advance_preview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    
+                    android:layout_marginEnd="5dp"
+                    
+                    android:layout_weight="0.33"
+                    android:background="@color/md_red_800"
+                    android:text="@string/preview"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/md_red_800" />
+
+                <Button
+                    android:id="@+id/btn_advance_submit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.33"
+                    android:background="@color/md_green_500"
+                    android:text="@string/submit"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/md_green_800" />
+
+                <Button
+                    android:id="@+id/btn_advance_reset"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    
+                    android:layout_marginEnd="10dp"
+                    
+                    android:layout_weight="0.33"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/reset"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/md_yellow_900" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,1255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.usermanagement.ModifyUserProfileActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_userprofile_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_userprofile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                app:navigationIcon="@drawable/ic_back"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:subtitle="User Profile List"
+                app:title="User Profile Management "
+                app:titleTextColor="@color/white">
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <!-- root linearlayout  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:text="Profile name"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/shape_rect_3"
+                android:hint=" Enter profile name"
+                android:padding="3dp"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:text="Select User (*)"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+<!--            <com.example.ankitroy.ezeefile.Chip.UsernameCompletionView-->
+<!--                android:id="@+id/autocomplete_textview_userprofileactivity"-->
+<!--                android:background="@drawable/shape_rect_3"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:dropDownSelector="@color/grey"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:focusableInTouchMode="true"-->
+<!--                android:imeOptions="actionDone"-->
+<!--                android:hint="Add Group"-->
+<!--                android:inputType="text|textNoSuggestions|textMultiLine"-->
+<!--                android:nextFocusDown="@+id/editText"-->
+<!--                android:textColor="@color/colorPrimaryDark"-->
+<!--                android:padding="7dp"-->
+<!--                android:maxLines="9"-->
+<!--                android:dropDownHeight="150dp"-->
+<!--                android:layout_margin="7dp"-->
+<!--                android:textSize="14sp" />-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Profile's Privileges"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Select All"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <!-- dashboard cardview -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+                        android:text="Dashboard"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.10"
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_mydms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mydms"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_editprofile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Profile"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_queries"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Queries"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_nooffolders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No of folders"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_nooffiles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No of files"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Memoryused"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Memory used"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+
+            <!-- Usermanager cardview  -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+                        android:text="User Manager"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.10"
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_usermanager_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_usermanager_modify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Modify"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_usermanager_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_usermanager_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+            <!-- Authorization cardview  -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+                        android:text="Authorization"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.10"
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Storage_Authorization"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Storage Authorization"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Online_User"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Online User"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Email_Configuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email Configuration"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Mail_Lists"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mail Lists"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+            <!-- Group manager cardview  -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+
+                        android:text="Group Manager"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp"
+                        android:layout_weight="0.10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                   />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_groupmanager_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_groupmanager_modify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Modify"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_groupmanager_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_groupmanager_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+            <!-- User Profile Manager cardview  -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+                        android:text="User Profile Manager"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp"
+                        android:layout_weight="0.10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                       />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_userprofilemanager_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_userprofilemanager_modify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Modify"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_userprofilemanager_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_userprofilemanager_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+            <!-- Upload/Import cardview  -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+
+                        android:text="Upload / Import"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.10" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_UploadImport_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+            <!-- Upload/Import cardview  -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+                        android:text="MetaData Registry"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp"
+                        android:layout_weight="0.10" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_MetaDataRegistry_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_MetaDataRegistry_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_MetaDataRegistry_assign"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Assign"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+
+            <!-- Storage manager cardview  -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+                        android:text="Storage Manager"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp"
+                        android:layout_weight="0.10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Storagemanager_createstorage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Create Storage"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Storagemanager_addnewchild"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add new child"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Storagemanager_uploaddoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Upload Documents"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Storagemanager_modify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Modify"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Storagemanager_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Storagemanager_move"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Move"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Storagemanager_copy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Copy"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+            <!-- Audit Trail cardview  -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+                        android:text="Audit Trail"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp"
+                        android:layout_weight="0.10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                       />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_AuditTrail_userwise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="User wise"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_AuditTrail_storagewise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Storage wise"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+
+            <!-- MetaData Search cardview  -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+                        android:text="Metadata Search"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp"
+                        android:layout_weight="0.10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                         />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_MetaDataSearch_Search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Search"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_MetaDataSearch_QuickSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Quick Search"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+            <!-- file View Permissions cardview  -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+                        android:text="File View Permissions"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp"
+                        android:layout_weight="0.10" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Edit_MetaData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Edit MetaData"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Comment"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_excel_file"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="excel file"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Annotated_Pdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Annotated Pdf"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_CheckinCheckout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Checkin/Checkout"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Tiff_File"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tiff File"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Export_Csv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Export Csv"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_View_File_Version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View File Version"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Move_Files"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Move Files"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Bulk_Download_Files"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bulk Download Files"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Annotation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Annotation"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_pdf_file"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pdf file"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Video_file"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Video file"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Delete_File_Version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Delete File Version"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Copy_Files"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Copy Files"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Annotation_Delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Annotation Delete"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_doc_file"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Doc file"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_image_file"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Image file"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Update_File"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Update File"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_fileViewPermissions_Share_File"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Share File"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+            <!-- For pdf Viewer Permissions cardview  -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+                        android:text="For pdf Viewer"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp"
+                        android:layout_weight="0.10" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_ForpdfViewer_Pdf_Print"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pdf Print"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_ForpdfViewer_Pdf_Download"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pdf Download"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+
+            <!-- Faq / Help cardview  -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+                        android:text="Faq / Help"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp"
+                        android:layout_weight="0.10" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Faq_ViewFaq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View Faq"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Faq_Addfaq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add faq"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Faq_Edit_Faq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Faq"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Faq_DeleteFaq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Delete Faq"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+
+            <!-- Recyclebin cardview  -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+                        android:text="Recycle Bin"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp"
+                        android:layout_weight="0.10" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_recyclebin_View_Recycle_Bin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Recycle Bin"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_recyclebin_Restore_files"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Restore Files"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_Permanent_Delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Permanent Delete"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+            <!-- Shared files cardview  -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="0.90"
+                        android:text="Shared and share with me"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_keyboard_arrow_down_grey_24dp"
+                        android:layout_weight="0.10"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_sharedfiles_View_shared_Files"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View Shared Files"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_sharedfiles_View_Share_With_Me"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View Share With Me"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_userprofile_sharedfiles_Feedback_Message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Permanent_Delete"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

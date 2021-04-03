@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="in.cbslgroup.ezeepeafinal">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:configChanges="locale"
+        android:name=".utils.Initializer"
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:icon="@drawable/ezeefile_icon_main"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/ezeefile_icon_main"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:windowSoftInputMode="stateVisible|adjustResize|adjustPan">
+
+
+        <activity
+            android:name="com.rohitss.uceh.UCEDefaultActivity"
+            android:process=":error_activity"/>
+
+
+        <activity android:name=".ui.activity.sharedfiles.ShareFolderActivity"/>
+        <activity android:name=".ui.activity.workflow.SanctionedClaimFormActivity" />
+        <activity android:name=".ui.activity.workflow.AdvanceSanctionedActivity" />
+        <activity android:name=".ui.activity.workflow.ClaimFormTravelExpenseActivity" />
+        <activity android:name=".ui.activity.workflow.AdvancedRequisitionFormActivity" />
+        <activity android:name=".ui.activity.visitorpass.VisitorPassActionActivity" />
+        <activity android:name=".ui.activity.visitorpass.VisitorPassActivity" />
+        <activity android:name=".ui.activity.search.FrequentlyQueriesActivity" />
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="in.cbslgroup.EzeePeaFinal.SplashScreenActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="in.cbslgroup.EzeePeaFinal.MainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.ProfileActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.activity.dms.DmsActivity" />
+        <activity android:name=".ui.activity.viewer.FileViewActivity" />
+        <activity
+            android:name=".ui.activity.dms.UploadActivity"
+            android:screenOrientation="fullSensor"  />
+        <activity android:name=".ui.activity.viewer.PdfViewerActivity" />
+        <activity android:name=".ui.activity.viewer.MetaSearchFileViewActivity" />
+        <activity android:name=".ui.activity.viewer.ImageViewerActivity" />
+        <activity android:name=".ui.activity.dms.MoveCopyStorageActivity" />
+        <activity android:name=".ui.activity.search.QuickSearchActivity" />
+        <activity android:name=".ui.activity.search.MetaDataSearchActivity" />
+        <activity
+            android:name=".ui.activity.audittrail.AuditTrailUserActivity"
+            android:label="@string/title_activity_audit_trail_user"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.activity.audittrail.AuditTrailStorageActivity"
+            android:label="@string/title_activity_audit_trail_storage"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ui.activity.RecycleBinActivity" />
+        <activity android:name=".ui.activity.sharedfiles.SharedFilesActivity" />
+        <activity android:name=".ui.activity.sharedfiles.SharedWithMeActivity" />
+        <activity android:name=".ui.activity.usermanagement.GroupManagerActivity" />
+        <activity android:name=".ui.activity.FaqActivity" />
+        <activity android:name=".ui.activity.usermanagement.ModifyGroupActivity" />
+        <activity android:name=".ui.activity.usermanagement.AddGroupActivity" />
+        <activity android:name=".ui.activity.usermanagement.ModifyUserProfileActivity" />
+        <activity android:name=".ui.activity.usermanagement.UserProfileActivity" />
+        <activity android:name=".ui.activity.dms.AssignMetadataActivity" />
+        <activity android:name=".ui.activity.dms.CheckInActivity" />
+
+        <receiver
+            android:name=".utils.NotificationActionsReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="in.cbslgroup.ezeepeafinal.notification.action" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".ui.activity.SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name=".Activity.SplashScreenActivity" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.workflow.IntiateWorkFlowActivity"
+            android:screenOrientation="fullSensor">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.workflow.TaskTrackStatusActivity" />
+        <activity android:name=".ui.activity.workflow.TaskTrackingActivity" />
+        <activity
+            android:name=".ui.activity.workflow.AuditTrailWorkFlowActivity"
+            android:label="@string/title_activity_audit_trail_work_flow"
+            android:theme="@style/AppTheme" />
+
+        <service
+            android:name=".services.InTrayNotificationService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ui.activity.workflow.InTrayActivity" />
+        <activity android:name=".ui.activity.workflow.TaskInProcessActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".ui.activity.workflow.AprrovedRejectTaskActivity" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name=".ui.activity.workflow.IntiateFileActivity" />
+        <activity
+            android:name=".ui.activity.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:theme="@style/AppTheme" /> <!-- FCM: Disable auto-init -->
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+
+        <service
+            android:name=".services.FirebaseMessagingService"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".services.IntiateWorkflowService"
+            android:enabled="true" />
+        <service
+            android:name=".services.TaskApproveRejectService"
+            android:enabled="true" />
+
+        <receiver
+            android:name=".broadcastreceiver.BootCompleted"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
