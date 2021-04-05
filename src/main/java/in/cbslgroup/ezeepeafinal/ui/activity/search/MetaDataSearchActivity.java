@@ -238,6 +238,10 @@ public class MetaDataSearchActivity extends AppCompatActivity {
                 formList.remove(pos);
                 metaDynamicFormAdapter.notifyItemRemoved(pos);
 
+                //manoj shakya 05-04-2021
+                metaDynamicFormAdapter.notifyItemRangeChanged(pos, formList.size());
+
+
             }
         });
 
