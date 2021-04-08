@@ -30,7 +30,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        android:windowSoftInputMode="stateVisible|adjustResize|adjustPan">
+        android:windowSoftInputMode="stateVisible|adjustResize|adjustPan"
+
+        >
 
 
         <activity
@@ -118,7 +120,7 @@
         </activity>
         <activity
             android:name=".ui.activity.workflow.IntiateWorkFlowActivity"
-            android:screenOrientation="fullSensor">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.GET_CONTENT" />
 

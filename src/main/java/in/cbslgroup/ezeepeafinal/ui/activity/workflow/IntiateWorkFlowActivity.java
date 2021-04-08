@@ -2,7 +2,9 @@
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -24,8 +26,10 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -274,6 +278,13 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(broadcastReceiverClosePB);
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intiate_work_flow);
@@ -303,25 +314,27 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
                     String msg = arg1.getStringExtra("msg");
                     String error = arg1.getStringExtra("error");
 
-
                     //alertProcessing("off", arg0);
-
-
                     if (error.equalsIgnoreCase("false")) {
-
                         //alertProcessing("off", arg0);
 
-                        alertDialogProcessing.dismiss();
-                        alertDialogProcessing.cancel();
+                        // manoj shakya 07-04-2021
+                        if(alertDialogProcessing!=null && alertDialogProcessing.isShowing()){
+                            alertDialogProcessing.dismiss();
+                            alertDialogProcessing.cancel();
+                        }
 
                         alertSuccess(msg, IntiateWorkFlowActivity.this);
 
                     } else if (error.equalsIgnoreCase("true")) {
 
                         //alertProcessing("off", arg0);
+                        // manoj shakya 07-04-2021
+                        if(alertDialogProcessing!=null && alertDialogProcessing.isShowing()){
+                            alertDialogProcessing.dismiss();
+                            alertDialogProcessing.cancel();
+                        }
 
-                        alertDialogProcessing.dismiss();
-                        alertDialogProcessing.cancel();
 
                         alertError(msg, IntiateWorkFlowActivity.this);
 
@@ -1157,7 +1170,9 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
                             try {
                                 if(!fromDate.equals("")){
                                     format = new SimpleDateFormat("dd-MM-yyyy");
-                                    String d = format.format(format.parse(fromDate).getTime()+86400000);
+
+                                    //manoj shakya 07-04-2021
+                                    String d = format.format(format.parse(fromDate).getTime());
                                     date  =format.parse(d) ;
                                 }
                                 // System.out.println(date);
@@ -2121,8 +2136,8 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 alertDialogError.dismiss();
-
-                if (alertDialogProcessing.isShowing()) {
+                // manoj shakya 07-04-2021
+                if (alertDialogProcessing!=null && alertDialogProcessing.isShowing()) {
                     alertDialogProcessing.dismiss();
 
                 }
@@ -2455,10 +2470,44 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
         return image;
     }
 
-    void alertSuccess(String message, final Context context) {
+    void alertSuccess(String message, Context context) {
 
+        //manoj shakya 06-04-21
+        Dialog dialogView = new Dialog(context);
+        dialogView.requestWindowFeature(1);
+        dialogView.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        dialogView.setContentView(R.layout.alertdialog_success);
+        //var3.setCanceledOnTouchOutside(false);
+        dialogView.setCancelable(false);
+        TextView tv_error_heading = dialogView.findViewById(R.id.tv_alert_success_heading);
+        tv_error_heading.setText(R.string.success);
+        TextView tv_error_subheading = dialogView.findViewById(R.id.tv_alert_success_subheading);
+        tv_error_subheading.setText(message);
+        Button btn_cancel_ok = dialogView.findViewById(R.id.btn_alert_success);
+        btn_cancel_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogView.dismiss();
 
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
+                Intent intent = new Intent(context, IntiateWorkFlowActivity.class);
+                intent.putExtra("workflowID", workflowId);
+                intent.putExtra("workflowName", workflowName);
+                //manoj shakya 06-04-21
+                intent.putExtra(IntiateWorkFlowActivity.EXTRAS_WORK_FLOW_TYPE,workFlowFormTypeId.toString());
+                finish();
+                startActivity(intent);
+            }
+        });
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialogView.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+
+        if (!((Activity) context).isFinishing() && !dialogView.isShowing()) dialogView.show();
+        dialogView.getWindow().setAttributes(lp);
+
+        //manoj shakya 06-04-21
+      /*  AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View dialogView = inflater.inflate(R.layout.alertdialog_success, null);
         TextView tv_error_heading = dialogView.findViewById(R.id.tv_alert_success_heading);
@@ -2469,33 +2518,24 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
         btn_cancel_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 alertDialogSuccess.dismiss();
-
-
                 if (alertDialogProcessing.isShowing()) {
                     alertDialogProcessing.dismiss();
-
                 }
-
-
                 Intent intent = new Intent(context, IntiateWorkFlowActivity.class);
                 intent.putExtra("workflowID", workflowId);
                 intent.putExtra("workflowName", workflowName);
-                startActivity(intent);
-
+                //manoj shakya 06-04-21
+                intent.putExtra(IntiateWorkFlowActivity.EXTRAS_WORK_FLOW_TYPE,workFlowFormTypeId.toString());
                 finish();
-
-
+                startActivity(intent);
             }
         });
-
         dialogBuilder.setView(dialogView);
         alertDialogSuccess = dialogBuilder.create();
         alertDialogSuccess.setCancelable(false);
         alertDialogSuccess.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        alertDialogSuccess.show();
+        alertDialogSuccess.show();*/
     }
 
     private void startCropImageActivity(Uri imageUri) {
@@ -4435,7 +4475,12 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
 
         }
 
-
+        //manoj shakya 07-04-2021
+        if(btnClearDocList.getVisibility()==View.VISIBLE){
+            btnClearDocList.callOnClick();
+            tvStorageName.setText(null);
+            tvSlid.setText(null);
+        }
     }
 
     private void requestPermission() {
