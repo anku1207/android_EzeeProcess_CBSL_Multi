@@ -1141,7 +1141,11 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
 
 
                     } else if (tvHeading.getText().toString().equalsIgnoreCase("To Date")) {
-
+                        //manoj shakya 10-04-2021
+                        if(fromDate==null || fromDate.equals("")){
+                            Toast.makeText(IntiateWorkFlowActivity.this, "From date is empty", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
                         // manoj shakya 01-04-21
                         Date date = new Date();

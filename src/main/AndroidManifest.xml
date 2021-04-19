@@ -37,21 +37,39 @@
 
         <activity
             android:name="com.rohitss.uceh.UCEDefaultActivity"
-            android:process=":error_activity"/>
+            android:process=":error_activity"
+            android:screenOrientation="portrait"/>
 
 
-        <activity android:name=".ui.activity.sharedfiles.ShareFolderActivity"/>
-        <activity android:name=".ui.activity.workflow.SanctionedClaimFormActivity" />
-        <activity android:name=".ui.activity.workflow.AdvanceSanctionedActivity" />
-        <activity android:name=".ui.activity.workflow.ClaimFormTravelExpenseActivity" />
-        <activity android:name=".ui.activity.workflow.AdvancedRequisitionFormActivity" />
-        <activity android:name=".ui.activity.visitorpass.VisitorPassActionActivity" />
-        <activity android:name=".ui.activity.visitorpass.VisitorPassActivity" />
-        <activity android:name=".ui.activity.search.FrequentlyQueriesActivity" />
+        <activity
+            android:name=".ui.activity.sharedfiles.ShareFolderActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.workflow.SanctionedClaimFormActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.workflow.AdvanceSanctionedActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.workflow.ClaimFormTravelExpenseActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.workflow.AdvancedRequisitionFormActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.visitorpass.VisitorPassActionActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.visitorpass.VisitorPassActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.search.FrequentlyQueriesActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="in.cbslgroup.EzeePeaFinal.SplashScreenActivity" />
 
@@ -60,7 +78,8 @@
         </activity>
         <activity
             android:name=".ui.activity.LoginActivity"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="in.cbslgroup.EzeePeaFinal.MainActivity" />
 
@@ -69,18 +88,35 @@
         </activity>
         <activity
             android:name=".ui.activity.ProfileActivity"
-            android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".ui.activity.dms.DmsActivity" />
-        <activity android:name=".ui.activity.viewer.FileViewActivity" />
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.dms.DmsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.viewer.FileViewActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.dms.UploadActivity"
             android:screenOrientation="fullSensor"  />
-        <activity android:name=".ui.activity.viewer.PdfViewerActivity" />
-        <activity android:name=".ui.activity.viewer.MetaSearchFileViewActivity" />
-        <activity android:name=".ui.activity.viewer.ImageViewerActivity" />
-        <activity android:name=".ui.activity.dms.MoveCopyStorageActivity" />
-        <activity android:name=".ui.activity.search.QuickSearchActivity" />
-        <activity android:name=".ui.activity.search.MetaDataSearchActivity" />
+        <activity
+            android:name=".ui.activity.viewer.PdfViewerActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.viewer.MetaSearchFileViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.viewer.ImageViewerActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.dms.MoveCopyStorageActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.search.QuickSearchActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.search.MetaDataSearchActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.audittrail.AuditTrailUserActivity"
             android:label="@string/title_activity_audit_trail_user"
@@ -88,18 +124,41 @@
         <activity
             android:name=".ui.activity.audittrail.AuditTrailStorageActivity"
             android:label="@string/title_activity_audit_trail_storage"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".ui.activity.RecycleBinActivity" />
-        <activity android:name=".ui.activity.sharedfiles.SharedFilesActivity" />
-        <activity android:name=".ui.activity.sharedfiles.SharedWithMeActivity" />
-        <activity android:name=".ui.activity.usermanagement.GroupManagerActivity" />
-        <activity android:name=".ui.activity.FaqActivity" />
-        <activity android:name=".ui.activity.usermanagement.ModifyGroupActivity" />
-        <activity android:name=".ui.activity.usermanagement.AddGroupActivity" />
-        <activity android:name=".ui.activity.usermanagement.ModifyUserProfileActivity" />
-        <activity android:name=".ui.activity.usermanagement.UserProfileActivity" />
-        <activity android:name=".ui.activity.dms.AssignMetadataActivity" />
-        <activity android:name=".ui.activity.dms.CheckInActivity" />
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.RecycleBinActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.sharedfiles.SharedFilesActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.sharedfiles.SharedWithMeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.usermanagement.GroupManagerActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.FaqActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.usermanagement.ModifyGroupActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.usermanagement.AddGroupActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.usermanagement.ModifyUserProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.usermanagement.UserProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.dms.AssignMetadataActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.dms.CheckInActivity"
+            android:screenOrientation="portrait"/>
 
         <receiver
             android:name=".utils.NotificationActionsReceiver"
@@ -110,7 +169,9 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ui.activity.SplashScreenActivity">
+        <activity
+            android:name=".ui.activity.SplashScreenActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name=".Activity.SplashScreenActivity" />
@@ -120,6 +181,7 @@
         </activity>
         <activity
             android:name=".ui.activity.workflow.IntiateWorkFlowActivity"
+            android:screenOrientation="portrait"
             >
             <intent-filter>
                 <action android:name="android.intent.action.GET_CONTENT" />
@@ -127,34 +189,50 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.workflow.TaskTrackStatusActivity" />
-        <activity android:name=".ui.activity.workflow.TaskTrackingActivity" />
+        <activity
+            android:name=".ui.activity.workflow.TaskTrackStatusActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.workflow.TaskTrackingActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.workflow.AuditTrailWorkFlowActivity"
             android:label="@string/title_activity_audit_trail_work_flow"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
 
         <service
             android:name=".services.InTrayNotificationService"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".ui.activity.workflow.InTrayActivity" />
-        <activity android:name=".ui.activity.workflow.TaskInProcessActivity" />
+        <activity
+            android:name=".ui.activity.workflow.InTrayActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.workflow.TaskInProcessActivity"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:resource="@array/preloaded_fonts"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".ui.activity.workflow.AprrovedRejectTaskActivity" />
+        <activity
+            android:name=".ui.activity.workflow.AprrovedRejectTaskActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat" />
-        <activity android:name=".ui.activity.workflow.IntiateFileActivity" />
+            android:theme="@style/Base.Theme.AppCompat"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.workflow.IntiateFileActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.AboutActivity"
             android:label="@string/title_activity_about"
-            android:theme="@style/AppTheme" /> <!-- FCM: Disable auto-init -->
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/> <!-- FCM: Disable auto-init -->
         <meta-data
             android:name="firebase_messaging_auto_init_enabled"
             android:value="false" />
