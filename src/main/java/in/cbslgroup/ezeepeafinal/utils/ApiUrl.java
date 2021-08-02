@@ -12,8 +12,8 @@ public class ApiUrl {
 
 
     //manoj shakya 01-04-21
-    public static final String BASE_URL = "https://dms.cbslgroup.in/api/"; //live link
-    public static final String BASE_URL_ROOT = "https://dms.cbslgroup.in/"; // This BASE URL is for the FTP and other tasks
+   // public static final String BASE_URL = "https://dms.cbslgroup.in/api/"; //live link
+   // public static final String BASE_URL_ROOT = "https://dms.cbslgroup.in/"; // This BASE URL is for the FTP and other tasks
 
 
      /**
@@ -25,8 +25,8 @@ public class ApiUrl {
 
 
      //manoj shakya 01-04-21
-    //public static final String BASE_URL = "http://144.48.78.35/Testing/ezeefile_cbsl/api/";
-   // public static final String BASE_URL_ROOT = "http://144.48.78.35/Testing/ezeefile_cbsl/"; //This BASE URL is for the FTP and other tasks
+    public static final String BASE_URL = "http://144.48.78.35/Testing/ezeefile_cbsl/api/";
+    public static final String BASE_URL_ROOT = "http://144.48.78.35/Testing/ezeefile_cbsl/"; //This BASE URL is for the FTP and other tasks
 
 
     public static final String LOGIN_URL = BASE_URL + "index.php";
