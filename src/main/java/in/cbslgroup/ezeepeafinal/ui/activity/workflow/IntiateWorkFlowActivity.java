@@ -92,6 +92,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.charset.StandardCharsets;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -142,7 +143,6 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
 
     Boolean allFill = false;
     Spinner spForm;
-    View llCashAddM;
     Toolbar toolbar;
     TextView tvStorageName, tvSlid;
     WebView webView;
@@ -230,7 +230,7 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
 
     List<String> locList = new ArrayList<>();
     EditText etRupeesStatic, etPaisaStatic, etTotalRupess, etTotalRupessWords, etPurpose, etDescription;
-    int TotalRupees = 0;
+    //int TotalRupees = 0;
     List<Description> descriptionList = new ArrayList<>();
     List<String> finalCashVoucherValues = new ArrayList<>();
     ArrayList<String> conveyanceList = new ArrayList<>();
@@ -449,61 +449,41 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-
-                if (s.toString().equalsIgnoreCase("") || s.toString().length() == 0 || TextUtils.isEmpty(s.toString())) {
-
-
+                /*if (s.toString().equalsIgnoreCase("") || s.toString().length() == 0 || TextUtils.isEmpty(s.toString())) {
                     if (addMoreViewList.size() > 0) {
                         //means there more then 1 addmore
 
                         for (int i = 0; i < addMoreViewList.size(); i++) {
 
                             EditText etRuppeDyna = addMoreViewList.get(i).findViewById(R.id.et_intiateworkflow_rupee_dynamic);
-
                             if (etRuppeDyna.getText().length() == 0) {
-
                                 etTotalRupess.getText().clear();
                                 etTotalRupessWords.getText().clear();
-
-
                             }
 
                             EditText etPaisaDyna = addMoreViewList.get(i).findViewById(R.id.et_intiateworkflow_rupee_dynamic);
-
                             if (etPaisaDyna.getText().length() == 0) {
-
                                 etTotalRupess.getText().clear();
                                 etTotalRupessWords.getText().clear();
-
-
                             }
-
                         }
-
-
                     } else if (addMoreViewList.size() == 0) {
                         //no addmore
-
                         etTotalRupess.getText().clear();
                         etTotalRupessWords.getText().clear();
                         etPaisaStatic.getText().clear();
 
-
                     }
-
-
-                    // etTotalRupess.setText(String.valueOf(getTotalAmount()));
-                    // etTotalRupessWords.setText(DigitToRuppee.convert(getTotalAmount()));
-
                 } else {
 
                     etTotalRupess.setText(String.valueOf(getTotalAmount()));
                     TotalRupees = Integer.parseInt(s.toString());
-                    etTotalRupessWords.setText(DigitToRuppee.convert(getTotalAmount()));
+                    etTotalRupessWords.setText(doubleToWords(getTotalAmount()));
 
                 }
-
-
+*/
+                etTotalRupess.setText(String.valueOf(getTotalAmount()));
+                etTotalRupessWords.setText(doubleToWords(getTotalAmount()));
                 //end here
 
 
@@ -523,8 +503,8 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
+                etTotalRupess.setText(String.valueOf(getTotalAmount()));
+                etTotalRupessWords.setText(doubleToWords(getTotalAmount()));
             }
 
             @Override
@@ -3065,9 +3045,9 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
                                 spinnerIdList.put("divisionID", ID);
                                 spinnerSelectedItemList.put("division", name);
 
-                                getProject(ID, sp);
-
-
+                                if(!ID.equals("")){
+                                    getProject(ID, sp);
+                                }
 
                               /* if(!findViewById(R.id.spinner_formbuilder).getTag().equals("spFormProject")){
 
@@ -3207,7 +3187,10 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
                             spinnerIdList.put("projectID", ID);
                             spinnerSelectedItemList.put("project", name);
 
-                            getLocation(ID, sp);
+                            if(!ID.equals("")){
+                                getLocation(ID, sp);
+                            }
+
 
                         }
 
@@ -3402,7 +3385,7 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
 
 
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        llCashAddM = inflater.inflate(R.layout.cash_voucher_add_more_layout, null);
+        View llCashAddM = inflater.inflate(R.layout.cash_voucher_add_more_layout, null);
         llCashAddM.setTag("AddMore" + addMoreCounter);
         addMoreViewList.add(llCashAddM);
         final TextView tvCounter = llCashAddM.findViewById(R.id.tv_add_more_counter);
@@ -3419,25 +3402,32 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // llCashAddM.removeViewAt(Integer.parseInt(tvCounter.getText().toString()));
+                if(addMoreViewList.size()>0){
+                   /* EditText etRupesDynamic = addMoreViewList.get(Integer.parseInt(tvCounter.getText().toString()) - 1).findViewById(R.id.et_intiateworkflow_rupee_dynamic);
+                    EditText etPaisaDynamic = addMoreViewList.get(Integer.parseInt(tvCounter.getText().toString()) - 1).findViewById(R.id.et_intiateworkflow_paisa_dynamic);
+                    etRupesDynamic.getText().clear();
+                    etPaisaDynamic.getText().clear();
 
-                EditText etRupesDynamic = addMoreViewList.get(Integer.parseInt(tvCounter.getText().toString()) - 1).findViewById(R.id.et_intiateworkflow_rupee_dynamic);
-                EditText etPaisaDynamic = addMoreViewList.get(Integer.parseInt(tvCounter.getText().toString()) - 1).findViewById(R.id.et_intiateworkflow_paisa_dynamic);
-                etRupesDynamic.getText().clear();
-                etPaisaDynamic.getText().clear();
-
-                etTotalRupess.setText(String.valueOf(getTotalAmount()));
-                etTotalRupessWords.setText(String.valueOf(DigitToRuppee.convert(getTotalAmount())));
-
-
-                addMoreViewList.remove(Integer.parseInt(tvCounter.getText().toString()) - 1);
-                llCashAddMore.removeViewAt(Integer.parseInt(tvCounter.getText().toString()));
-
-                Log.e("childcount", String.valueOf(llCashAddMore.getChildCount()));
-                Log.e("tvCount", String.valueOf(Integer.parseInt(tvCounter.getText().toString())));
-                Log.e("count", String.valueOf(addMoreCounter));
-                addMoreCounter--;
+                    etTotalRupess.setText(String.valueOf(getTotalAmount()));
+                    etTotalRupessWords.setText(doubleToWords(getTotalAmount()));
+                    addMoreViewList.remove(Integer.parseInt(tvCounter.getText().toString()) - 1);
+                    llCashAddMore.removeViewAt(Integer.parseInt(tvCounter.getText().toString()));
+                    Log.e("childcount", String.valueOf(llCashAddMore.getChildCount()));
+                    Log.e("tvCount", String.valueOf(Integer.parseInt(tvCounter.getText().toString())));
+                    Log.e("count", String.valueOf(addMoreCounter));
+                    addMoreCounter--;*/
+                   /* EditText etRupesDynamic = addMoreViewList.get(Integer.parseInt(tvCounter.getText().toString()) - 1).findViewById(R.id.et_intiateworkflow_rupee_dynamic);
+                    EditText etPaisaDynamic = addMoreViewList.get(Integer.parseInt(tvCounter.getText().toString()) - 1).findViewById(R.id.et_intiateworkflow_paisa_dynamic);
+                    etRupesDynamic.getText().clear();
+                    etPaisaDynamic.getText().clear();*/
 
 
+                    addMoreViewList.remove(llCashAddM);
+                    llCashAddMore.removeView(llCashAddM);
+                    etTotalRupess.setText(String.valueOf(getTotalAmount()));
+                    etTotalRupessWords.setText(doubleToWords(getTotalAmount()));
+                    addMoreCounter--;
+                }
             }
         });
 
@@ -3456,8 +3446,9 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
                 Log.e("before", String.valueOf(before));
                 Log.e("count", String.valueOf(count));
 
-
-                if (s.toString().equalsIgnoreCase("") || s.toString().length() == 0 || TextUtils.isEmpty(s.toString())) {
+                etTotalRupess.setText(String.valueOf(getTotalAmount()));
+                etTotalRupessWords.setText(doubleToWords(getTotalAmount()));
+                /*if (s.toString().equalsIgnoreCase("") || s.toString().length() == 0 || TextUtils.isEmpty(s.toString())) {
 
                     //totalcount = String.valueOf(TotalRupees);
                     Log.e("no text", "no text");
@@ -3466,7 +3457,7 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
 
 
                         etTotalRupess.setText(String.valueOf(getTotalAmount()));
-                        etTotalRupessWords.setText(String.valueOf(DigitToRuppee.convert(getTotalAmount())));
+                        etTotalRupessWords.setText(doubleToWords(getTotalAmount()));
 
 
                     } else if (addMoreViewList.size() > 0) {
@@ -3484,14 +3475,14 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
                                 etPaisaDyna.setText("");
 
                                 etTotalRupess.setText(String.valueOf(getTotalAmount()));
-                                etTotalRupessWords.setText(String.valueOf(DigitToRuppee.convert(getTotalAmount())));
+                                etTotalRupessWords.setText(doubleToWords(getTotalAmount()));
 
 
                             } else {
 
 
                                 etTotalRupess.setText(String.valueOf(getTotalAmount()));
-                                etTotalRupessWords.setText(String.valueOf(DigitToRuppee.convert(getTotalAmount())));
+                                etTotalRupessWords.setText(doubleToWords(getTotalAmount()));
 
                             }
 
@@ -3503,7 +3494,7 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
                                 etPaisaDyna.getText().clear();
 
                                 etTotalRupess.setText(String.valueOf(getTotalAmount()));
-                                etTotalRupessWords.setText(String.valueOf(DigitToRuppee.convert(getTotalAmount())));
+                                etTotalRupessWords.setText(doubleToWords(getTotalAmount()));
 
 
                             }
@@ -3512,7 +3503,7 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
 
 
                         etTotalRupess.setText(String.valueOf(getTotalAmount()));
-                        etTotalRupessWords.setText(String.valueOf(DigitToRuppee.convert((getTotalAmount()))));
+                        etTotalRupessWords.setText(doubleToWords((getTotalAmount())));
 
 
                     } else {
@@ -3521,7 +3512,7 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
                         etTotalRupessWords.getText().clear();
 
                         etTotalRupess.setText(String.valueOf(getTotalAmount()));
-                        etTotalRupessWords.setText(String.valueOf(DigitToRuppee.convert(getTotalAmount())));
+                        etTotalRupessWords.setText(doubleToWords(getTotalAmount()));
 
                     }
 
@@ -3537,10 +3528,10 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
                     totalcount = String.valueOf(Integer.parseInt(s.toString()) + TotalRupees);
                     TotalRupees = Integer.parseInt(totalcount);
                     etTotalRupess.setText(String.valueOf(getTotalAmount()));
-                    etTotalRupessWords.setText(DigitToRuppee.convert(getTotalAmount()));
+                    etTotalRupessWords.setText(doubleToWords(getTotalAmount()));
 
 
-                }
+                }*/
 
 
             }
@@ -3560,7 +3551,8 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                etTotalRupess.setText(String.valueOf(getTotalAmount()));
+                etTotalRupessWords.setText(doubleToWords(getTotalAmount()));
             }
 
             @Override
@@ -3573,83 +3565,73 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
         llCashAddMore.addView(llCashAddM);
 
         addMoreCounter++;
-
-
-       /* EditText etRupee = llCashAddMore.findViewById(R.id.et_intiateworkflow_rupee_dynamic);
-
-
-
-        EditText etPaisa = llCashAddMore.findViewById(R.id.et_intiateworkflow_paisa_dynamic);
-        */
-
-        // View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cash_voucher_add_more_layout, parent, false);
-
-
     }
 
-    int getTotalAmount() {
 
-        int totalAmount = 0;
+   String doubleToWords(double value){
+       String returnValue=null;
+       DecimalFormat df = new DecimalFormat("#.00");
+       String angleFormated = df.format(value);
+
+       String []splitValues = angleFormated.split("\\.");
+       if(splitValues.length>1){
+           if(!splitValues[0].equals("0") && !splitValues[0].equals("") && !splitValues[1].equals("00")){
+               returnValue=  DigitToRuppee.convert(Integer.parseInt(splitValues[0])) +" Rupees And "+DigitToRuppee.convert(Integer.parseInt(splitValues[1]))+ " Paisa";
+           }else if(splitValues[0].equals("0") || splitValues[0].equals("")){
+               returnValue= DigitToRuppee.convert(Integer.parseInt(splitValues[1]))+ " Paisa";
+           }else if(splitValues[1].equals("0") || splitValues[1].equals("00")){
+               returnValue= DigitToRuppee.convert(Integer.parseInt(splitValues[0]))+ " Rupees";
+           }
+       }else if(splitValues.length==1){
+           returnValue=  DigitToRuppee.convert(Integer.parseInt(splitValues[0]));
+       }
+        return returnValue==null?"":returnValue;
+   }
+
+
+    double getTotalAmount() {
+        DecimalFormat df = new DecimalFormat("#.00");
+
+        double totalAmount = 0.00;
+        String rupeesStatic=etRupeesStatic.getText().toString().trim();
+        String paisaStatic=etPaisaStatic.getText().toString().trim();
+
+        paisaStatic=paisaStatic.length()<2?"0".concat(paisaStatic):paisaStatic;
+
+        if(!rupeesStatic.equals("")){
+            totalAmount += Double.parseDouble(rupeesStatic);
+        }
+        if(!paisaStatic.equals("")){
+            totalAmount += Double.parseDouble("."+paisaStatic);
+        }
 
         if (addMoreViewList.size() == 0) {
-
-            if (etRupeesStatic.getText().toString().length() == 0) {
-
-                etRupeesStatic.setText("0");
-
-
-            } else {
-
-                totalAmount = Integer.parseInt(etRupeesStatic.getText().toString());
-            }
-
-
+           return totalAmount;
         } else {
 
-
-            String etStaticRupeeValue = etRupeesStatic.getText().toString();
-
-            if (etStaticRupeeValue.length() == 0) {
-
-
-                etStaticRupeeValue = "0";
-                //etRupeesStatic.setText("0");
-                // etRupeesStatic.getText().clear();
-
-            }
-
-
             for (int i = 0; i < addMoreViewList.size(); i++) {
-
-                Log.e("static rupee", etStaticRupeeValue);
                 View view = addMoreViewList.get(i);
                 CardView cardView = (CardView) view;
                 EditText etRupeeDynamic = cardView.findViewById(R.id.et_intiateworkflow_rupee_dynamic);
+                EditText etPaisaDynamic = cardView.findViewById(R.id.et_intiateworkflow_paisa_dynamic);
 
-                String etDynamicRupee = "";
+                double etDynamicRupee = 0.00;
+                String rupeesDynamic=etRupeeDynamic.getText().toString().trim();
+                String paisaDynamic=etPaisaDynamic.getText().toString().trim();
 
-                if (etRupeeDynamic.getText().toString().length() == 0) {
+                paisaDynamic=paisaDynamic.length()<2?"0".concat(paisaDynamic):paisaDynamic;
 
-                    etDynamicRupee = "0";
-
-                } else {
-
-                    etDynamicRupee = etRupeeDynamic.getText().toString();
+                if(!rupeesDynamic.equals("")){
+                    etDynamicRupee += Double.parseDouble(rupeesDynamic);
                 }
-
-
-                totalAmount = totalAmount + Integer.parseInt(etDynamicRupee);
+                if(!paisaDynamic.equals("")){
+                    etDynamicRupee += Double.parseDouble("."+paisaDynamic);
+                }
+                totalAmount = totalAmount + etDynamicRupee;
                 Log.e("totalAmount", String.valueOf(totalAmount));
-
             }
-
-            totalAmount = totalAmount + Integer.parseInt(etStaticRupeeValue);
-
         }
-
-
-        return totalAmount;
-
+        return Double.parseDouble(df.format(totalAmount));
     }
 
     void getCashVoucherValue() {
