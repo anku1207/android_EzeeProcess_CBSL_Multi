@@ -22,8 +22,12 @@ import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.Editable;
+import android.text.InputFilter;
+import android.text.InputType;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.text.method.DigitsKeyListener;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
@@ -865,6 +869,9 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
                         String classtype = jsonArray.getJSONObject(i).getString("class");
                         Log.e("classtype", classtype);
 
+                        int specialChar = jsonArray.getJSONObject(i).getInt("special_char");
+                        Log.e("special_char", classtype);
+
                         if (classtype.equalsIgnoreCase("form-control ccenter")) {
 
 
@@ -916,12 +923,12 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
 
                         if (jsonArraySpData.length() == 0) {
 
-                            createForm(type, label, maxlength, aid, fid, required, value, placeholder, classtype, new JSONArray());
+                            createForm(type, label, maxlength, aid, fid, required, value, placeholder, classtype, specialChar,new JSONArray());
 
 
                         } else {
 
-                            createForm(type, label, maxlength, aid, fid, required, value, placeholder, classtype, jsonArraySpData.getJSONArray(0));
+                            createForm(type, label, maxlength, aid, fid, required, value, placeholder, classtype, specialChar,jsonArraySpData.getJSONArray(0));
 
                         }
 
@@ -992,7 +999,7 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    void createForm(String type, String label, String maxlength, String aid, String fid, String required, String value, String placeholder, String classtype, JSONArray jsonArray) {
+    void createForm(String type, String label, String maxlength, String aid, String fid, String required, String value, String placeholder, String classtype,int specialChar, JSONArray jsonArray) {
 
 
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -1388,11 +1395,25 @@ public class IntiateWorkFlowActivity extends AppCompatActivity {
             TextView textView = llText.findViewById(R.id.tv_text_formbuilder);
             textView.setText(label);
 
-
             EditText editText = llText.findViewById(R.id.et_text_formbuilder);
             editText.setSelection(0);
 
-
+            if(specialChar==0){
+                editText.setFilters(new InputFilter[] {
+                        new InputFilter() {
+                            public CharSequence filter(CharSequence src, int start,
+                                                       int end, Spanned dst, int dstart, int dend) {
+                                if(src.equals("")){ // for backspace
+                                    return src;
+                                }
+                                if(src.toString().matches("[a-zA-Z0-9]+")){
+                                    return src;
+                                }
+                                return "";
+                            }
+                        }
+                });
+            }
             if (label.equalsIgnoreCase("No.")) {
 
 
