@@ -8,8 +8,8 @@ android {
         applicationId "in.cbslgroup.ezeepeafinal"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 20//earlier 17
-        versionName "2.9" //earlier 2.6-->2.7
+        versionCode 21//earlier 20
+        versionName "2.10" //earlier 2.6-->2.7
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
