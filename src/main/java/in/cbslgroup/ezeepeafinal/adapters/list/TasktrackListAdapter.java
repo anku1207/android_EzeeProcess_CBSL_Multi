@@ -123,6 +123,12 @@ public class TasktrackListAdapter extends RecyclerView.Adapter<RecyclerView.View
         listVH.tvDocid.setText(taskTrackList.get(position).getDocid());
 
 
+
+        // manoj shakya 31-08-21
+        if(taskTrackList.get(position).getDocid().equals("0")){
+            listVH.btnViewDoc.setVisibility(View.GONE);
+        }
+
         listVH.btnViewDoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
