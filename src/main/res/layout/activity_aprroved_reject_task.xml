@@ -662,7 +662,7 @@
 
                 <androidx.cardview.widget.CardView
                     app:cardCornerRadius="8dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:id="@+id/cv_approve_reject_task_adduser_dynamic"
                     app:cardElevation="5dp"
                     app:cardUseCompatPadding="true"

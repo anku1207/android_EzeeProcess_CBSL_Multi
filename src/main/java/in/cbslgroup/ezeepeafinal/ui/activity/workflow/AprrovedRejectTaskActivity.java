@@ -853,8 +853,9 @@ public class AprrovedRejectTaskActivity extends AppCompatActivity implements Con
                         cvAddUser.setVisibility(View.VISIBLE);
 
                         if (orderPresent) {
-
-                            cvAddUserDynamic.setVisibility(View.VISIBLE);
+                            // manoj shakya 4/09/2021
+                            //cvAddUserDynamic.setVisibility(View.VISIBLE);
+                            cvAddUserDynamic.setVisibility(View.GONE);
 
                         }
 
@@ -1910,7 +1911,12 @@ public class AprrovedRejectTaskActivity extends AppCompatActivity implements Con
                             if (order > 1) {
 
 
-                                cvAddUserDynamic.setVisibility(View.VISIBLE);
+                                // manoj shakya 4/09/2021
+                                //cvAddUserDynamic.setVisibility(View.VISIBLE);
+                                cvAddUserDynamic.setVisibility(View.GONE);
+
+
+
                                 tvAdduser.setText(R.string.edit_add_user);
                                 orderPresent = true;
                                 tvtaskorder.setText(taskorder);
